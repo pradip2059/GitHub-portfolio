@@ -2,29 +2,25 @@ body {
     background-color: #1e1e1e;
     color: white;
     font-family: Arial, sans-serif;
-}
-
-.hero {
-    padding: 60px 0;
     text-align: center;
 }
 
+.hero {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .profile-img {
-    width: 150px; /* Adjust size as needed */
-    height: 150px;
-    border-radius: 50%; /* Makes it a circular image */
-    object-fit: cover; /* Ensures it doesn’t stretch */
+    width: 180px; /* Adjust size as needed */
+    height: 180px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures correct proportions */
     margin-bottom: 20px;
-    border: 3px solid white; /* Optional white border */
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2); /* Optional shadow effect */
-}
-
-.navbar {
-    padding: 10px;
-}
-
-.nav-link {
-    color: white !important;
+    border: 3px solid white; /* Optional border */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -37,8 +33,9 @@ h2 {
     color: #ccc;
 }
 
-p {
-    max-width: 800px;
-    margin: 0 auto;
+p.description {
+    max-width: 750px;
+    margin: 15px auto;
     line-height: 1.6;
+    font-size: 1.1rem;
 }
