@@ -1,7 +1,7 @@
 /* General Styles */
 body {
-    background-color: #1e1e1e; /* Dark background */
-    color: white; /* White text for better visibility */
+    background-color: #ffffff; /* White background */
+    color: black; /* Black text */
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
@@ -11,18 +11,21 @@ body {
 /* Navbar */
 .navbar {
     padding: 10px;
+    background-color: #f8f9fa !important; /* Light navbar */
+    border-bottom: 2px solid #ddd;
 }
 
 .navbar-brand {
     font-weight: bold;
+    color: black !important;
 }
 
 .nav-link {
-    color: white !important;
+    color: black !important;
 }
 
 .nav-link:hover {
-    color: #f8f9fa !important;
+    color: #007bff !important; /* Blue hover effect */
 }
 
 /* Hero Section */
@@ -31,15 +34,16 @@ body {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    background-color: #ffffff; /* Ensure white background */
 }
 
 .profile-img {
-    width: 180px; /* Adjust size as needed */
+    width: 180px;
     height: 180px;
-    border-radius: 50%; /* Makes it circular */
-    object-fit: cover; /* Ensures proper aspect ratio */
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 20px;
-    border: 3px solid white;
+    border: 3px solid black; /* Black border */
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -48,12 +52,12 @@ body {
 h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #ffffff;
+    color: black; /* Black text */
 }
 
 h2 {
     font-size: 1.5rem;
-    color: #ccc;
+    color: #333; /* Dark gray for readability */
 }
 
 p {
@@ -61,7 +65,7 @@ p {
     margin: 15px auto;
     line-height: 1.6;
     font-size: 1.1rem;
-    color: #ddd;
+    color: black; /* Black text */
 }
 
 /* About Page */
@@ -70,17 +74,17 @@ p {
     max-width: 900px;
     margin: 0 auto;
     text-align: left;
-    background-color: #1e1e1e; /* Ensures dark background */
-    color: white; /* Ensures text is readable */
+    background-color: #ffffff; /* White background */
+    color: black; /* Black text */
 }
 
 .about h1, .about h2, .about h3 {
-    color: #f8f9fa; /* Light gray for headings */
+    color: black; /* Black headings */
 }
 
 .about p, .about ul {
     font-size: 1.1rem;
-    color: #ddd;
+    color: black;
 }
 
 .about ul {
@@ -94,32 +98,33 @@ p {
     max-width: 900px;
     margin: 0 auto;
     text-align: left;
-    background-color: #1e1e1e;
-    color: white;
+    background-color: #ffffff;
+    color: black;
 }
 
 .projects h1, .resume h1 {
     text-align: center;
-    color: #f8f9fa;
+    color: black;
     margin-bottom: 20px;
 }
 
 .projects p, .resume p {
     font-size: 1.1rem;
-    color: #ddd;
+    color: black;
 }
 
 /* Footer */
 .footer {
     text-align: center;
     padding: 20px;
-    background-color: #121212;
-    color: #ccc;
+    background-color: #f5f5f5;
+    color: black;
     margin-top: 40px;
+    border-top: 2px solid #ddd;
 }
 
 .footer a {
-    color: #f8f9fa;
+    color: black;
     text-decoration: none;
 }
 
