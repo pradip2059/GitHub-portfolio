@@ -168,3 +168,32 @@ p {
     padding-left: 20px;
     color: black;
 }
+.resume {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ffffff;
+    color: black;
+}
+
+.resume h1 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+.resume p {
+    font-size: 1.1rem;
+    color: black;
+}
+
+.resume iframe {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.resume .btn {
+    font-size: 1.2rem;
+}
+
