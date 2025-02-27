@@ -9,24 +9,23 @@ body {
 }
 
 /* Navbar */
+/* Navbar */
 .navbar {
-    padding: 10px;
-    background-color: #f8f9fa !important; /* Light navbar */
-    border-bottom: 2px solid #ddd;
+    background-color: #007bff !important; /* Keep primary blue navbar */
 }
 
-.navbar-brand {
-    font-weight: bold;
-    color: black !important;
-}
-
+.navbar-brand,
 .nav-link {
-    color: black !important;
+    color: white !important; /* Ensure links are always visible */
+    transition: color 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-    color: #007bff !important; /* Blue hover effect */
+    color: #ffcc00 !important; /* Change to yellow or any visible color */
+    background-color: rgba(255, 255, 255, 0.1) !important; /* Light hover background */
+    border-radius: 5px; /* Optional: smooth rounded hover effect */
 }
+
 
 /* Hero Section */
 .hero {
