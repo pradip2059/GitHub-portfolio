@@ -1,28 +1,35 @@
-# Pradip Sapkota - Portfolio Website  
+# Pradip Sapkota - Portfolio Website 🌐
 
-Welcome to my personal portfolio website! 🚀  
+Welcome to my **personal portfolio website**, where I showcase my **skills, projects, and professional experience** in **Robotics, AI, and Embedded Systems**.
 
-## About Me  
-I am a **Computer Engineering student** at *Minnesota State University, Mankato*, with a strong interest in **Robotics, Artificial Intelligence, Embedded Systems, and Digital System Design**. My work focuses on **robotic programming, microprocessors, and control systems**, and I have experience with **Raspberry Pi, ROS, and AI-powered voice assistants**.  
+📍 **Live Website:** [pradip2059.github.io/GitHub-portfolio](https://pradip2059.github.io/GitHub-portfolio/)
 
-## Technologies Used  
-- **Languages:** C++, Python, VHDL, SystemVerilog, C, Java, C#  
-- **Software & Tools:** MATLAB, Visual Studio, Keil uVision, Azure DevOps, GitHub  
-- **Hardware:** FPGA, Arduino, STM32, XMEGA, Oscilloscope  
+---
 
-## Features of This Website  
-✅ Responsive **dark-themed design**  
-✅ **About Me** section detailing my expertise  
-✅ **Projects** showcasing my work in robotics and AI  
-✅ **Resume Download** option  
-✅ **Contact Form** for inquiries  
+## 🛠 Tech Stack  
+- **Frontend:** HTML, CSS, Bootstrap 5  
+- **Deployment:** GitHub Pages  
 
-## How to View This Website  
-This portfolio is hosted on **GitHub Pages**. You can view it live here:  
-🔗 [https://your-username.github.io/portfolio/](https://your-username.github.io/portfolio/)  
+---
 
-## How to Use This Repository  
-1. Clone the repository:  
-   ```sh
-   git clone https://github.com/your-username/portfolio.git
-   cd portfolio
+## 📂 Website Structure  
+- **Home:** Introduction, profile image, and quick bio.  
+- **About:** Education, skills, and work experience.  
+- **Projects:** Showcase of my best projects with descriptions.  
+- **Resume:** Embedded resume with a download option.  
+
+---
+
+## 🚀 Features  
+✔ **Responsive Navbar** (Works on mobile & desktop)  
+✔ **Modern Shadow Box Design** for About & Projects sections  
+✔ **Social Links** (GitHub, LinkedIn, Email)  
+✔ **Mobile-Friendly Design**  
+✔ **GitHub Pages Deployment**  
+
+---
+
+## 🏗 How to Run Locally  
+1️⃣ **Clone this repository**  
+```sh
+git clone https://github.com/pradip2059/GitHub-portfolio.git
