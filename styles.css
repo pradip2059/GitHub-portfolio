@@ -74,23 +74,39 @@ p {
     max-width: 900px;
     margin: 0 auto;
     text-align: left;
-    background-color: #ffffff; /* White background */
-    color: black; /* Black text */
-}
-
-.about h1, .about h2, .about h3 {
-    color: black; /* Black headings */
-}
-
-.about p, .about ul {
-    font-size: 1.1rem;
+    background-color: #ffffff;
     color: black;
 }
 
-.about ul {
+.about h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 30px;
+}
+
+/* Shadow Box Styling */
+.about-box {
+    background: #f8f9fa; /* Light gray background */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-box h2 {
+    color: black;
+}
+
+.about-box p, .about-box ul {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.about-box ul {
     list-style-type: square;
     padding-left: 20px;
 }
+
 
 /* Projects & Resume Sections */
 .projects, .resume {
