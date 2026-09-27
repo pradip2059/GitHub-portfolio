@@ -75,3 +75,42 @@ html[data-theme="dark"] .course-grid span {
 }
 html[data-theme="dark"] .course-grid strong { color:#93c5fd !important; }
 html[data-theme="dark"] .section-intro { color:#b8c3d4 !important; }
+
+/* v10: softer layered surfaces in both themes */
+:root{
+  --page:#f4f8fd;
+  --card:#ffffff;
+  --soft:#edf4fd;
+  --line:#cddced;
+  --shadow:rgba(30,64,105,.09);
+}
+body{background:linear-gradient(180deg,#f8fbff 0%,var(--page) 100%)!important;}
+.about-box,.project{
+  background:var(--card)!important;
+  border:1px solid var(--line)!important;
+  box-shadow:0 8px 24px var(--shadow)!important;
+}
+/* Give major About-page cards a subtle blue wash rather than pure white */
+.about .about-box{background:linear-gradient(145deg,#ffffff 0%,#f5f9ff 100%)!important;}
+.course-grid span{
+  background:#eaf2fb!important;
+  border:1px solid #d9e7f6!important;
+}
+html[data-theme="dark"]{
+  --page:#0b1120;
+  --card:#111b2c;
+  --soft:#17243a;
+  --line:#2d405b;
+  --shadow:rgba(0,0,0,.28);
+}
+html[data-theme="dark"] body{background:linear-gradient(180deg,#09101d 0%,#0b1120 100%)!important;}
+html[data-theme="dark"] .about .about-box,
+html[data-theme="dark"] .project{
+  background:linear-gradient(145deg,#111b2c 0%,#101827 100%)!important;
+  border:1px solid #31445f!important;
+  box-shadow:0 8px 24px rgba(0,0,0,.25)!important;
+}
+html[data-theme="dark"] .course-grid span{
+  background:#172640!important;
+  border:1px solid #2e4668!important;
+}
