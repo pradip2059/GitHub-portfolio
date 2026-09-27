@@ -14,3 +14,16 @@ body{background:var(--page);color:var(--ink);transition:background-color .2s eas
 .theme-toggle{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.10);color:#fff;border-radius:999px;padding:6px 11px;font:inherit;font-size:.9rem;font-weight:650;cursor:pointer;transition:background .18s ease,border-color .18s ease,transform .18s ease}.theme-toggle:hover{background:rgba(255,255,255,.20);border-color:#fff}.theme-toggle:active{transform:translateY(1px)}.theme-toggle:focus-visible{outline:3px solid rgba(255,255,255,.55);outline-offset:2px}.theme-toggle i{width:14px;text-align:center}
 html[data-theme="dark"] .btn-outline-dark{color:#f3f4f6;border-color:#cbd5e1}html[data-theme="dark"] .btn-outline-dark:hover{color:#111827;background:#f3f4f6}html[data-theme="dark"] .btn-dark{background:#e5e7eb;border-color:#e5e7eb;color:#111827}html[data-theme="dark"] a:not(.btn):not(.nav-link):not(.navbar-brand){color:#8ec5ff}
 @media(max-width:991px){.theme-toggle{margin:8px 0 4px}}
+
+
+/* v8: true dark-mode surface overrides (loaded after Bootstrap) */
+html,body{min-height:100%;background-color:var(--page)!important;color:var(--ink)!important}
+html[data-theme="dark"],html[data-theme="dark"] body{background:#0b1120!important;color:#f3f4f6!important}
+html[data-theme="dark"] .hero,html[data-theme="dark"] .about,html[data-theme="dark"] .projects,html[data-theme="dark"] .resume,html[data-theme="dark"] main{background:transparent!important}
+html[data-theme="dark"] .text-dark{color:#f3f4f6!important}
+html[data-theme="dark"] .text-muted{color:#aeb8c8!important}
+html[data-theme="dark"] .bg-white,html[data-theme="dark"] .bg-light{background-color:#111827!important}
+html[data-theme="dark"] .card{background-color:#111827!important;color:#f3f4f6!important;border-color:#2b3a52!important}
+html[data-theme="dark"] .btn-outline-primary{color:#8ec5ff;border-color:#60a5fa}
+html[data-theme="dark"] .btn-outline-primary:hover{background:#2563eb;color:#fff}
+html[data-theme="dark"] .profile-img{border-color:#334155;box-shadow:0 8px 30px rgba(0,0,0,.45)}
