@@ -2,15 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pradip Sapkota | Computer Engineering Portfolio</title>
-  <meta name="description" content="Computer Engineering portfolio of Pradip Sapkota: controls and automation, electrical hardware and test, embedded firmware, and robotics.">
+  <meta name="description" content="Pradip Sapkota is a Computer Engineering senior at Minnesota State University, Mankato focused on embedded firmware, controls and automation, electrical hardware, test and robotics.">
+  <meta name="author" content="Pradip Sapkota">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pradipsapkota.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pradip Sapkota — Computer Engineering Portfolio">
+  <meta property="og:title" content="Pradip Sapkota | Computer Engineer — Embedded, Controls & Hardware">
+  <meta property="og:description" content="Pradip Sapkota is a Computer Engineering senior at Minnesota State University, Mankato focused on embedded firmware, controls and automation, electrical hardware, test and robotics.">
+  <meta property="og:url" content="https://pradipsapkota.dev/">
+  <meta property="og:image" content="https://pradipsapkota.dev/IMG_1389.jpg">
+  <meta property="og:image:alt" content="Pradip Sapkota">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pradip Sapkota | Computer Engineer — Embedded, Controls & Hardware">
+  <meta name="twitter:description" content="Pradip Sapkota is a Computer Engineering senior at Minnesota State University, Mankato focused on embedded firmware, controls and automation, electrical hardware, test and robotics.">
+  <meta name="twitter:image" content="https://pradipsapkota.dev/IMG_1389.jpg">
+  <title>Pradip Sapkota | Computer Engineer — Embedded, Controls & Hardware</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://pradipsapkota.dev/#pradip-sapkota","name":"Pradip Sapkota","url":"https://pradipsapkota.dev/","image":"https://pradipsapkota.dev/IMG_1389.jpg","jobTitle":"Computer Engineering Student","description":"Computer Engineering senior focused on embedded firmware, controls and automation, electrical hardware and test, and robotics.","alumniOf":{"@type":"CollegeOrUniversity","name":"Minnesota State University, Mankato"},"sameAs":["https://github.com/pradip2059","https://www.linkedin.com/in/pradip-sapkota-8a93582b0/"]}</script>
+
+  <script>
+  (function () {
+    const saved = localStorage.getItem('portfolio-theme');
+    const preferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', saved || preferred);
+  })();
+  </script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary"><div class="container"><a class="navbar-brand" href="index.html">Pradip Sapkota</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li><li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li></ul></div></div></nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary"><div class="container"><a class="navbar-brand" href="index.html">Pradip Sapkota</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li><li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li><li class="nav-item ms-lg-2 d-flex align-items-center"><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme"><i class="fas fa-moon" aria-hidden="true"></i><span class="theme-label">Dark</span></button></li></ul></div></div></nav>
 <header class="hero"><div class="container text-center">
   <img src="IMG_1389.jpg" alt="Pradip Sapkota" class="profile-img">
   <p class="eyebrow">COMPUTER ENGINEERING • MINNESOTA STATE UNIVERSITY, MANKATO</p>
@@ -21,4 +45,27 @@
   <p class="description">My experience includes industrial analytics at Ruppell Inc., university IT systems support, and undergraduate research in digital/embedded systems. Projects include PLC/HMI pump-station control, STM32 motor control and condition monitoring, fabricated PCB designs, a smart access-control system, an AI voice assistant, and robotics programming.</p>
   <div class="social-links"><a href="https://github.com/pradip2059" target="_blank" rel="noopener" class="btn btn-dark"><i class="fab fa-github"></i> GitHub</a><a href="https://www.linkedin.com/in/pradip-sapkota-8a93582b0/" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-linkedin"></i> LinkedIn</a><a href="mailto:pradipsapkota.ce@outlook.com" class="btn btn-outline-dark"><i class="fas fa-envelope"></i> Email</a><a href="projects.html" class="btn btn-outline-primary">View Projects</a></div>
 </div></header>
+
+<script>
+(function () {
+  const button = document.getElementById('theme-toggle');
+  if (!button) return;
+  const icon = button.querySelector('i');
+  const label = button.querySelector('.theme-label');
+  function render(theme) {
+    const dark = theme === 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    icon.className = dark ? 'fas fa-sun' : 'fas fa-moon';
+    label.textContent = dark ? 'Light' : 'Dark';
+    button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+    button.setAttribute('title', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+  render(document.documentElement.getAttribute('data-theme') || 'light');
+  button.addEventListener('click', function () {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('portfolio-theme', next);
+    render(next);
+  });
+})();
+</script>
 </body></html>
