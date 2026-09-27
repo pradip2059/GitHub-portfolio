@@ -27,3 +27,51 @@ html[data-theme="dark"] .card{background-color:#111827!important;color:#f3f4f6!i
 html[data-theme="dark"] .btn-outline-primary{color:#8ec5ff;border-color:#60a5fa}
 html[data-theme="dark"] .btn-outline-primary:hover{background:#2563eb;color:#fff}
 html[data-theme="dark"] .profile-img{border-color:#334155;box-shadow:0 8px 30px rgba(0,0,0,.45)}
+
+
+/* v9: consistent full-page dark theme on every page */
+html[data-theme="dark"] body,
+html[data-theme="dark"] section,
+html[data-theme="dark"] .about,
+html[data-theme="dark"] .projects,
+html[data-theme="dark"] .resume,
+html[data-theme="dark"] .hero,
+html[data-theme="dark"] main {
+  background-color:#0b1120 !important;
+  color:#f3f4f6 !important;
+}
+html[data-theme="dark"] .container { color:#f3f4f6; }
+html[data-theme="dark"] .about h1,
+html[data-theme="dark"] .projects h1,
+html[data-theme="dark"] .resume h1,
+html[data-theme="dark"] .about-box h2,
+html[data-theme="dark"] .about-box h3,
+html[data-theme="dark"] .project h2,
+html[data-theme="dark"] .project h3 {
+  color:#f3f4f6 !important;
+}
+html[data-theme="dark"] .about-box,
+html[data-theme="dark"] .project {
+  background:#111827 !important;
+  border:1px solid #334155 !important;
+  color:#f3f4f6 !important;
+  box-shadow:0 8px 24px rgba(0,0,0,.28) !important;
+}
+html[data-theme="dark"] .about-box p,
+html[data-theme="dark"] .about-box li,
+html[data-theme="dark"] .project p,
+html[data-theme="dark"] .project li,
+html[data-theme="dark"] .course-grid span {
+  color:#dbe4f0 !important;
+}
+html[data-theme="dark"] .about-box strong,
+html[data-theme="dark"] .project strong { color:#f8fafc !important; }
+html[data-theme="dark"] .experience-entry .role-title { color:#f8fafc !important; }
+html[data-theme="dark"] .experience-entry .company-name { color:#dbe4f0 !important; }
+html[data-theme="dark"] .experience-entry .experience-date { color:#60a5fa !important; }
+html[data-theme="dark"] .course-grid span {
+  background:#182235 !important;
+  border:1px solid #2b3a52;
+}
+html[data-theme="dark"] .course-grid strong { color:#93c5fd !important; }
+html[data-theme="dark"] .section-intro { color:#b8c3d4 !important; }
