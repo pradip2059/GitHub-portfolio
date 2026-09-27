@@ -1,69 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Pradip Sapkota</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-</head>
-    <!-- Bootstrap JS (for responsive navbar) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<body>
-
-    <!-- Navbar -->
- <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">Pradip Sapkota</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-
-    <!-- Projects Section -->
-    <section class="projects">
-        <div class="container">
-            <h1>Projects</h1>
-
-            <!-- Project 1: Robotic Engineering Project -->
-            <div class="project">
-                <h2>Robotic Engineering Project</h2>
-                <p><strong>Technologies:</strong> Raspberry Pi OS 2, ROS, C++, I2C Communication</p>
-                <ul>
-                    <li>Developed and tested robots using **Raspberry Pi OS 2, ROS, and C++**.</li>
-                    <li>Integrated a **2D interactive grid game** for enhanced interaction.</li>
-                    <li>Used **I2C communication** for robotics system programming.</li>
-                    <li>Conducted **comprehensive testing for performance and reliability**.</li>
-                </ul>
-            </div>
-
-            <!-- Project 2: Interactive Voice Assistant -->
-            <div class="project">
-                <h2>Interactive Voice Assistant (Junior Design Project)</h2>
-                <p><strong>Technologies:</strong> Raspberry Pi, Python, NLP, GPIO</p>
-                <ul>
-                    <li>Developed a **voice recognition & NLP-based** assistant.</li>
-                    <li>Integrated **hardware & software systems on Raspberry Pi**.</li>
-                    <li>Used **GPIO & Python-based drivers** for optimized communication.</li>
-                    <li>Improved **response accuracy through iterative testing & debugging**.</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Projects | Pradip Sapkota</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"><script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script></head><body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary"><div class="container"><a class="navbar-brand" href="index.html">Pradip Sapkota</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarNav"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li><li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li></ul></div></div></nav>
+<section class="projects"><div class="container"><h1>Engineering Projects</h1><p class="section-intro">Projects spanning controls, embedded firmware, PCB/hardware design, AI integration, and robotics.</p>
+<div class="project"><div class="tag">Controls & Automation</div><h2>Industrial Pump Station Control & Monitoring Simulation</h2><p><strong>PLC • HMI/SCADA • PID • VFD • Python • Modbus TCP</strong></p><ul><li>Modeled multi-pump control with lead/lag sequencing, PID pressure regulation, VFD commands, and automatic pump rotation.</li><li>Designed simulated HMI/SCADA views for pressure, flow, tank level, equipment status, alarms, and operating modes.</li><li>Simulated fault handling and pump failover with Python and Modbus TCP data acquisition for maintenance analysis.</li></ul></div>
+<div class="project"><div class="tag">Embedded Firmware</div><h2>STM32 Motor Control & Condition Monitoring</h2><p><strong>C • STM32 • UART • ADC • PWM • DMA</strong></p><ul><li>Developed embedded C firmware for motor control and sensor acquisition using timers, PWM, ADC, interrupts, and DMA.</li><li>Implemented non-blocking UART telemetry for sensor data, operating states, and fault information.</li><li>Integrated fault-monitoring logic and performed hardware/firmware debugging using serial diagnostics and test instrumentation.</li></ul></div>
+<div class="project"><div class="tag">PCB & Embedded Systems</div><h2>Smart Door Access Control System</h2><p><strong>KiCad • Autodesk EAGLE • Embedded Systems • Python • IoT</strong></p><ul><li>Designed and fabricated a PCB for an embedded access-control system integrating electronic locks, sensors, hardware I/O, and authentication hardware.</li><li>Developed hardware–software control logic with sensor processing, anti-spoofing, fail-safe behavior, and reliability testing.</li></ul></div>
+<div class="project"><div class="tag">PCB & AI Integration</div><h2>Interactive AI Voice Assistant</h2><p><strong>KiCad • Autodesk EAGLE • Raspberry Pi 4B • Python • GPIO</strong></p><ul><li>Designed and fabricated a PCB supporting a Raspberry Pi voice-assistant system with audio and GPIO-controlled hardware.</li><li>Integrated speech recognition, text-to-speech, external AI services, and hardware indicators in Python.</li><li>Performed hardware–software integration and iterative debugging to improve system reliability and response behavior.</li></ul></div>
+<div class="project"><div class="tag">Robotics</div><h2>Robotic Engineering Project</h2><p><strong>Raspberry Pi • ROS • C++ • I2C</strong></p><ul><li>Developed and tested robotics software using Raspberry Pi, ROS, and C++.</li><li>Integrated a 2D interactive grid-based component and used I2C communication for system programming.</li><li>Performed iterative functional testing and debugging for system behavior and reliability.</li></ul></div>
+</div></section></body></html>
