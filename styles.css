@@ -129,3 +129,6 @@ html[data-theme="dark"] .certificate-provider{color:#7db7ff!important}
 html[data-theme="dark"] .certificate-card h3{color:#f8fafc!important}
 html[data-theme="dark"] .certificate-meta,html[data-theme="dark"] .certificate-skills{color:#c8d4e5!important}
 @media(max-width:575px){.certificate-grid{grid-template-columns:1fr}.certificate-card{padding:17px}}
+
+.certificate-intro{margin:0 0 18px!important;color:#46566d!important}
+html[data-theme="dark"] .certificate-intro{color:#c8d4e5!important}
