@@ -114,3 +114,18 @@ html[data-theme="dark"] .course-grid span{
   background:#172640!important;
   border:1px solid #2e4668!important;
 }
+
+
+/* v12: scalable certificates section */
+.certificate-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:12px}
+.certificate-card{display:flex;flex-direction:column;justify-content:space-between;gap:18px;padding:20px 22px;border-radius:14px;background:#eaf2fb;border:1px solid #d9e7f6}
+.certificate-provider{display:inline-block;margin-bottom:8px;color:#0b5cab;font-size:.82rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.certificate-card h3{margin:0 0 9px!important;font-size:1.05rem!important;line-height:1.45;color:#172033!important}
+.certificate-meta,.certificate-skills{margin:5px 0!important;color:#46566d!important}
+.certificate-link{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:9px;background:#0d6efd;color:#fff!important;text-decoration:none;font-weight:700;transition:transform .15s ease,background .15s ease}
+.certificate-link:hover{background:#0b5ed7;transform:translateY(-1px)}
+html[data-theme="dark"] .certificate-card{background:#172640!important;border:1px solid #2e4668!important}
+html[data-theme="dark"] .certificate-provider{color:#7db7ff!important}
+html[data-theme="dark"] .certificate-card h3{color:#f8fafc!important}
+html[data-theme="dark"] .certificate-meta,html[data-theme="dark"] .certificate-skills{color:#c8d4e5!important}
+@media(max-width:575px){.certificate-grid{grid-template-columns:1fr}.certificate-card{padding:17px}}
