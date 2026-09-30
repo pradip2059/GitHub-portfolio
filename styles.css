@@ -1208,3 +1208,52 @@ html[data-theme="light"] #projects.section.alt {
     border-radius: 13px !important;
   }
 }
+
+
+/* =========================================================
+   V18.1 — TABLET NAVIGATION FIX
+   Applies only between phone/mobile and full desktop widths.
+   Phone/mobile (<=900px) and desktop (>1100px) remain unchanged.
+   ========================================================= */
+@media (min-width: 901px) and (max-width: 1100px) {
+  .nav-inner {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    gap: 10px !important;
+  }
+
+  /* Keep the elegant desktop-style bar on tablets, but reclaim
+     enough horizontal room so labels never break onto two lines. */
+  .brand > span:last-child {
+    display: none !important;
+  }
+
+  .nav-links {
+    flex: 1 1 auto !important;
+    justify-content: flex-end !important;
+    gap: 5px !important;
+    min-width: 0 !important;
+  }
+
+  .nav-links a,
+  .nav-links .resume-link,
+  .nav-links .theme-toggle {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    font-size: .78rem !important;
+    padding: 7px 7px !important;
+  }
+
+  .nav-links .resume-link {
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+  }
+
+  .nav-links .theme-toggle {
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+    gap: 5px !important;
+  }
+}

@@ -18,8 +18,29 @@ const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isInte
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 const sections=[...document.querySelectorAll('main section[id]')], nav=[...document.querySelectorAll('.nav-links a[href^="#"]')];
 nav[0]?.classList.add('active');
-window.addEventListener('scroll',()=>{
+function updateActiveNav(){
   let current='home';
-  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-140)current=s.id});
-  nav.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current));
-},{passive:true});
+
+  // At the bottom of the page, force the final section active.
+  // This fixes Contact never becoming active when the viewport is
+  // taller than the remaining Contact/footer content.
+  const nearBottom =
+    window.innerHeight + window.scrollY >=
+    document.documentElement.scrollHeight - 8;
+
+  if (nearBottom && sections.length) {
+    current = sections[sections.length - 1].id;
+  } else {
+    sections.forEach(s=>{
+      if(window.scrollY >= s.offsetTop - 140) current=s.id;
+    });
+  }
+
+  nav.forEach(a=>
+    a.classList.toggle('active',a.getAttribute('href')==='#'+current)
+  );
+}
+
+window.addEventListener('scroll',updateActiveNav,{passive:true});
+window.addEventListener('resize',updateActiveNav,{passive:true});
+updateActiveNav();
