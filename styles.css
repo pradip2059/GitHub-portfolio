@@ -350,3 +350,245 @@ p, li, h1, h2, h3, span, a {
     transform:none;
   }
 }
+
+
+/* V15.6 TEST — cleaner mobile role strip */
+@media (max-width: 900px) {
+  .role-strip {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    max-width: 100%;
+    padding: 11px 16px;
+    border-radius: 16px;
+    background: color-mix(in srgb, #eaf3ff 88%, var(--surface));
+    border: 1px solid color-mix(in srgb, var(--accent) 18%, #dbe9fa);
+    box-shadow: 0 8px 22px rgba(25,55,95,.08);
+    line-height: 1.45;
+  }
+
+  html[data-theme="dark"] .role-strip {
+    background: color-mix(in srgb, #dcecff 12%, var(--surface));
+    border-color: color-mix(in srgb, var(--accent) 32%, var(--line));
+    box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  }
+}
+
+@media (max-width: 520px) {
+  .role-strip {
+    padding: 10px 14px;
+    border-radius: 18px;
+    font-size: clamp(.88rem, 4vw, 1rem);
+  }
+}
+
+
+/* V15.7 TEST — definitive role-strip fix, all viewport sizes */
+.hero .role-strip {
+  display: inline-flex !important;
+  flex-wrap: wrap !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  padding: 10px 15px !important;
+  border-radius: 16px !important;
+  background: #e8f2ff !important;
+  border: 1px solid #bfd8f7 !important;
+  box-shadow: 0 8px 22px rgba(31, 93, 166, .10) !important;
+  color: #142033 !important;
+  line-height: 1.45 !important;
+}
+
+html[data-theme="dark"] .hero .role-strip {
+  background: rgba(31, 72, 124, .34) !important;
+  border-color: rgba(76, 154, 255, .36) !important;
+  color: #f3f7ff !important;
+  box-shadow: 0 9px 24px rgba(0, 0, 0, .18) !important;
+}
+
+@media (max-width: 520px) {
+  .hero .role-strip {
+    padding: 9px 13px !important;
+    border-radius: 18px !important;
+    font-size: .90rem !important;
+    gap: 0 !important;
+  }
+}
+
+
+/* =========================================================
+   V15.8 TEST — GLASS / TRANSLUCENT ENGINEERING THEME
+   Test-only visual layer inspired by the depth of the
+   accounting portfolio while retaining Pradip's blue identity.
+   ========================================================= */
+
+body {
+  background:
+    radial-gradient(circle at 84% 12%, rgba(76,154,255,.17), transparent 28%),
+    radial-gradient(circle at 8% 42%, rgba(55,112,194,.12), transparent 27%),
+    radial-gradient(circle at 70% 78%, rgba(88,139,216,.10), transparent 25%),
+    var(--bg) !important;
+  background-attachment: fixed !important;
+}
+
+/* Glass navigation */
+.topnav {
+  background: color-mix(in srgb, var(--bg) 70%, transparent) !important;
+  backdrop-filter: blur(20px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(145%) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 20%, var(--line)) !important;
+  box-shadow: 0 8px 30px rgba(16,42,78,.08) !important;
+}
+
+/* Let alternating sections retain rhythm while becoming translucent. */
+.section.alt {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--surface2) 48%, transparent),
+      color-mix(in srgb, var(--bg) 62%, transparent)
+    ) !important;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 8%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+/* Shared glass surface for real content boxes only. */
+.card,
+.skill-card,
+.timeline-card,
+.project-card,
+.certificate-card,
+.contact-box,
+#coursework .course-item {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--surface) 78%, transparent) 0%,
+      color-mix(in srgb, var(--surface2) 58%, transparent) 100%
+    ) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line)) !important;
+  backdrop-filter: blur(16px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(135%) !important;
+  box-shadow:
+    0 14px 38px rgba(25,55,95,.10),
+    inset 0 1px 0 rgba(255,255,255,.20) !important;
+}
+
+/* Hero role badge: translucent blue glass rather than a solid bar. */
+.hero .role-strip {
+  background: color-mix(in srgb, #dcecff 66%, transparent) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, #dcecff) !important;
+  backdrop-filter: blur(14px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(140%) !important;
+  box-shadow:
+    0 10px 28px rgba(31,93,166,.12),
+    inset 0 1px 0 rgba(255,255,255,.35) !important;
+}
+
+/* Buttons / quick facts / floating chips get lighter glass treatment. */
+.btn:not(.primary),
+.quick-facts span,
+.floating-chip,
+.theme-toggle,
+.resume-link {
+  background: color-mix(in srgb, var(--surface) 64%, transparent) !important;
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--line)) !important;
+  backdrop-filter: blur(12px) saturate(130%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(130%) !important;
+}
+
+/* More dimensional hover, but still restrained. */
+@media (hover:hover) and (pointer:fine) {
+  .card:hover,
+  .skill-card:hover,
+  .timeline-card:hover,
+  .project-card:hover,
+  .certificate-card:hover,
+  .contact-box:hover,
+  #coursework .course-item:hover {
+    transform: translateY(-5px) !important;
+    border-color: color-mix(in srgb, var(--accent) 58%, var(--line)) !important;
+    box-shadow:
+      0 20px 45px rgba(25,55,95,.16),
+      inset 0 1px 0 rgba(255,255,255,.28) !important;
+  }
+}
+
+/* Dark mode is where the glass treatment becomes most visible. */
+html[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at 84% 12%, rgba(76,154,255,.18), transparent 30%),
+    radial-gradient(circle at 10% 45%, rgba(34,85,155,.18), transparent 28%),
+    radial-gradient(circle at 68% 82%, rgba(50,105,181,.12), transparent 27%),
+    #07101d !important;
+}
+
+html[data-theme="dark"] .topnav {
+  background: rgba(8,17,31,.70) !important;
+  border-bottom-color: rgba(76,154,255,.18) !important;
+}
+
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .skill-card,
+html[data-theme="dark"] .timeline-card,
+html[data-theme="dark"] .project-card,
+html[data-theme="dark"] .certificate-card,
+html[data-theme="dark"] .contact-box,
+html[data-theme="dark"] #coursework .course-item {
+  background:
+    linear-gradient(135deg, rgba(20,35,58,.72), rgba(16,29,49,.56)) !important;
+  border-color: rgba(76,154,255,.22) !important;
+  box-shadow:
+    0 18px 42px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,255,255,.055) !important;
+}
+
+html[data-theme="dark"] .hero .role-strip {
+  background: rgba(30,62,105,.44) !important;
+  border-color: rgba(76,154,255,.42) !important;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.22),
+    inset 0 1px 0 rgba(255,255,255,.07) !important;
+}
+
+html[data-theme="dark"] .btn:not(.primary),
+html[data-theme="dark"] .quick-facts span,
+html[data-theme="dark"] .floating-chip,
+html[data-theme="dark"] .theme-toggle,
+html[data-theme="dark"] .resume-link {
+  background: rgba(17,33,56,.58) !important;
+  border-color: rgba(76,154,255,.25) !important;
+}
+
+/* Mobile: preserve the fixed V15.7 width behavior. */
+@media (max-width:900px) {
+  body { background-attachment: scroll !important; }
+
+  .card,
+  .skill-card,
+  .timeline-card,
+  .project-card,
+  .certificate-card,
+  .contact-box,
+  #coursework .course-item {
+    backdrop-filter: blur(12px) saturate(125%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(125%) !important;
+  }
+}
+
+
+/* =========================================================
+   V16 FINAL — hero role badge spacing polish
+   ========================================================= */
+.hero .role-strip {
+  word-spacing: .10em !important;
+  letter-spacing: .005em !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+@media (max-width:520px) {
+  .hero .role-strip {
+    word-spacing: .07em !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}

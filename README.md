@@ -1,20 +1,17 @@
-# Pradip Sapkota — Engineering Portfolio
+# Pradip Sapkota — Engineering Portfolio V16
 
-Production portfolio for **https://pradipsapkota.dev**
+Production build for **https://pradipsapkota.dev**
 
-Includes:
-- About
-- Technical Skills
-- Relevant Coursework
-- Professional & Research Experience
-- Engineering Projects
-- Certificates
-- Contact / Resume
-- Light & dark themes
-- Active section navigation
-- Responsive mobile layout
+V16 finalizes the blue glass/translucent engineering design:
+- glass content cards and navigation
+- subtle blue ambient background depth
+- polished hero role badge
+- responsive mobile layout
+- active-section navigation
+- first-scroll reveal animations
+- card hover interactions
+- light/dark mode
+- coursework, experience, projects, certificates, and contact
+- production CNAME, robots.txt, sitemap.xml, and canonical metadata
 
-## GitHub Pages
 Deploy from the `main` branch at `/ (root)`.
-
-The included `CNAME` configures the site for `pradipsapkota.dev`.
