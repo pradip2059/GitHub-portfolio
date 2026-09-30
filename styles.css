@@ -625,3 +625,57 @@ html[data-theme="dark"] .section.alt {
 .section:not(.alt):not(.contact) {
   background: transparent;
 }
+
+
+/* =========================================================
+   V16.2 FINAL — clearer Home → About → Skills section rhythm
+   ========================================================= */
+
+/* Home stays the deepest/navy section. */
+#home {
+  background:
+    radial-gradient(circle at 82% 28%, rgba(76,154,255,.12), transparent 30%),
+    linear-gradient(180deg, rgba(7,16,29,.18), rgba(7,16,29,.05)) !important;
+}
+
+/* About gets a clearly lighter blue-glass band. */
+#about.section.alt {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(22,48,82,.90) 0%,
+      rgba(18,42,73,.86) 50%,
+      rgba(24,52,88,.88) 100%
+    ) !important;
+  border-top: 1px solid rgba(76,154,255,.20) !important;
+  border-bottom: 1px solid rgba(76,154,255,.20) !important;
+}
+
+/* Skills returns to the deeper base so the transition is obvious. */
+#skills {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8,18,32,.24),
+      rgba(8,18,32,.08)
+    ) !important;
+  border-top: 0 !important;
+}
+
+/* Light mode keeps the same alternating logic without becoming harsh. */
+html[data-theme="light"] #home {
+  background:
+    radial-gradient(circle at 82% 28%, rgba(76,154,255,.10), transparent 30%),
+    var(--bg) !important;
+}
+html[data-theme="light"] #about.section.alt {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(226,239,255,.92),
+      rgba(237,245,255,.88)
+    ) !important;
+}
+html[data-theme="light"] #skills {
+  background: var(--bg) !important;
+}
