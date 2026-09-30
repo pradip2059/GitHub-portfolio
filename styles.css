@@ -32,3 +32,321 @@ a{color:inherit}.topnav{position:fixed;inset:0 0 auto;z-index:1000;background:co
 .nav-links a[href^="#"].active:hover {
   color: #fff !important;
 }
+
+
+/* Coursework — compact two-column cards */
+#coursework .section-head{
+  margin-bottom:28px;
+}
+
+#coursework .course-grid{
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:14px !important;
+}
+
+#coursework .course-item{
+  display:grid !important;
+  grid-template-columns:110px minmax(0,1fr) !important;
+  align-items:center !important;
+  gap:16px !important;
+  min-height:72px !important;
+  padding:16px 20px !important;
+  background:linear-gradient(
+    135deg,
+    var(--surface) 0%,
+    color-mix(in srgb,var(--surface2) 58%,var(--surface)) 100%
+  ) !important;
+  border:1px solid var(--line) !important;
+  border-radius:16px !important;
+  box-shadow:0 8px 22px rgba(25,55,95,.07) !important;
+  overflow:hidden;
+  position:relative;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+
+#coursework .course-item::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:4px;
+  background:var(--accent);
+}
+
+#coursework .course-item:hover{
+  transform:translateY(-3px);
+  border-color:color-mix(in srgb,var(--accent) 55%,var(--line));
+  box-shadow:0 12px 28px rgba(25,55,95,.12) !important;
+}
+
+#coursework .course-item strong{
+  color:var(--accent) !important;
+  white-space:nowrap;
+  font-size:1rem !important;
+  font-weight:850;
+  letter-spacing:.01em;
+}
+
+#coursework .course-item span{
+  color:var(--text) !important;
+  font-size:.98rem;
+  line-height:1.35;
+}
+
+html[data-theme="dark"] #coursework .course-item{
+  background:linear-gradient(
+    135deg,
+    var(--surface) 0%,
+    color-mix(in srgb,var(--surface2) 72%,var(--surface)) 100%
+  ) !important;
+  border-color:var(--line) !important;
+  box-shadow:0 10px 26px rgba(0,0,0,.18) !important;
+}
+
+@media(max-width:900px){
+  #coursework .course-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+@media(max-width:520px){
+  #coursework .course-item{
+    grid-template-columns:1fr !important;
+    gap:3px !important;
+    padding:14px 17px !important;
+  }
+}
+
+
+/* V15.4 — mobile width / overflow hardening */
+html, body {
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+body {
+  min-width:0;
+}
+
+main, section, .section, .nav-inner,
+.hero-grid, .hero-copy, .hero-visual,
+.two-col, .skill-grid, .course-grid,
+.timeline, .timeline-item, .timeline-card,
+.project-grid, .project-card,
+.certificate-card, .contact-box {
+  min-width:0;
+  max-width:100%;
+}
+
+img, svg, video, iframe {
+  max-width:100%;
+  height:auto;
+}
+
+p, li, h1, h2, h3, span, a {
+  overflow-wrap:anywhere;
+}
+
+@media(max-width:900px){
+  .nav-inner{
+    width:100%;
+    padding-left:16px;
+    padding-right:16px;
+  }
+
+  .nav-links{
+    width:100%;
+    max-height:calc(100vh - 72px);
+    overflow-y:auto;
+    overflow-x:hidden;
+  }
+
+  .section,
+  .section.alt{
+    width:100%;
+    max-width:100%;
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .hero{
+    min-height:auto;
+    padding-top:105px;
+    padding-bottom:72px;
+  }
+
+  .hero-grid{
+    width:100%;
+    gap:34px;
+  }
+
+  .hero-copy{
+    width:100%;
+  }
+
+  .hero h1{
+    font-size:clamp(2.9rem,14vw,4rem);
+    overflow-wrap:normal;
+  }
+
+  .role-strip{
+    max-width:100%;
+    white-space:normal;
+  }
+
+  .hero-visual{
+    width:100%;
+    min-height:390px;
+    overflow:hidden;
+  }
+
+  .hero-visual:before{
+    width:min(280px,72vw);
+    height:min(280px,72vw);
+  }
+
+  .hero-visual:after{
+    width:min(340px,84vw);
+    height:min(340px,84vw);
+  }
+
+  .portrait-frame{
+    width:min(300px,76vw);
+  }
+
+  .floating-chip{
+    max-width:42vw;
+    white-space:normal;
+    text-align:center;
+  }
+
+  .two-col,
+  .skill-grid,
+  .project-grid,
+  #coursework .course-grid{
+    width:100%;
+    grid-template-columns:minmax(0,1fr) !important;
+  }
+
+  .card,
+  .timeline-card,
+  .project-card,
+  .certificate-card,
+  .contact-box,
+  #coursework .course-item{
+    width:100%;
+    max-width:100%;
+  }
+
+  .timeline{
+    margin-left:0;
+  }
+
+  .timeline-item{
+    padding-left:30px;
+  }
+
+  .timeline:before{
+    left:6px;
+  }
+
+  .dot{
+    left:-1px;
+  }
+
+  .job-head{
+    width:100%;
+  }
+
+  .job-head > span{
+    white-space:normal;
+  }
+}
+
+@media(max-width:520px){
+  .section,
+  .section.alt{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .card,
+  .timeline-card,
+  .project-card,
+  .certificate-card{
+    padding:20px 18px;
+    border-radius:15px;
+  }
+
+  .contact-box{
+    padding:28px 18px;
+  }
+
+  .hero-actions .btn{
+    flex:1 1 100%;
+    justify-content:center;
+  }
+
+  .quick-facts{
+    gap:7px;
+  }
+
+  .quick-facts span{
+    font-size:.78rem;
+  }
+
+  #coursework .course-item{
+    padding:14px 16px !important;
+  }
+}
+
+
+/* V15.5 — consistent interactive hover on content boxes only */
+.card,
+.skill-card,
+.timeline-card,
+.project-card,
+.certificate-card,
+.contact-box,
+#coursework .course-item {
+  transition:
+    transform .22s ease,
+    border-color .22s ease,
+    box-shadow .22s ease !important;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  .card:hover,
+  .skill-card:hover,
+  .timeline-card:hover,
+  .project-card:hover,
+  .certificate-card:hover,
+  .contact-box:hover {
+    transform:translateY(-4px);
+    border-color:color-mix(in srgb,var(--accent) 48%,var(--line)) !important;
+    box-shadow:0 14px 32px rgba(25,55,95,.13) !important;
+  }
+
+  html[data-theme="dark"] .card:hover,
+  html[data-theme="dark"] .skill-card:hover,
+  html[data-theme="dark"] .timeline-card:hover,
+  html[data-theme="dark"] .project-card:hover,
+  html[data-theme="dark"] .certificate-card:hover,
+  html[data-theme="dark"] .contact-box:hover {
+    box-shadow:0 16px 34px rgba(0,0,0,.30) !important;
+  }
+}
+
+/* Touch devices should stay still when tapped. */
+@media (hover:none) {
+  .card:hover,
+  .skill-card:hover,
+  .timeline-card:hover,
+  .project-card:hover,
+  .certificate-card:hover,
+  .contact-box:hover,
+  #coursework .course-item:hover {
+    transform:none;
+  }
+}

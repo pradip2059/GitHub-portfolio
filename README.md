@@ -2,16 +2,17 @@
 
 Production portfolio for **https://pradipsapkota.dev**
 
-Single-page engineering portfolio featuring:
+Includes:
 - About
 - Technical Skills
+- Relevant Coursework
 - Professional & Research Experience
 - Engineering Projects
 - Certificates
 - Contact / Resume
 - Light & dark themes
 - Active section navigation
-- Responsive layout
+- Responsive mobile layout
 
 ## GitHub Pages
 Deploy from the `main` branch at `/ (root)`.
