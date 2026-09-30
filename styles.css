@@ -1345,3 +1345,49 @@ html[data-theme="light"] #projects.section.alt {
     }
   }
 }
+
+
+/* =========================================================
+   V18.4 TEST — CLEAN NAV AT REST
+   Keep text clean until hover; active section still uses the
+   approved V18.3 shared liquid-glass sliding indicator.
+   ========================================================= */
+@media (min-width:901px){
+  /* Normal section links: text only. */
+  .nav-links a[href^="#"]:not(.resume-link){
+    background:transparent !important;
+    border-color:transparent !important;
+    box-shadow:none !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+  }
+
+  /* Hover/focus: reveal a subtle blue glass capsule. */
+  .nav-links a[href^="#"]:not(.resume-link):not(.active):hover,
+  .nav-links a[href^="#"]:not(.resume-link):not(.active):focus-visible{
+    background:
+      linear-gradient(135deg,
+        rgba(63,126,218,.20),
+        rgba(37,84,153,.14)) !important;
+    border:1px solid rgba(125,183,255,.28) !important;
+    box-shadow:
+      0 7px 20px rgba(16,64,132,.16),
+      inset 0 1px 0 rgba(255,255,255,.11) !important;
+    backdrop-filter:blur(14px) saturate(145%) !important;
+    -webkit-backdrop-filter:blur(14px) saturate(145%) !important;
+    border-radius:14px !important;
+  }
+
+  /* Active item itself stays transparent; V18.3's shared
+     moving indicator supplies the blue active glass pill. */
+  .topnav.nav-indicator-ready .nav-links a[href^="#"].active{
+    background:transparent !important;
+    border-color:transparent !important;
+    box-shadow:none !important;
+  }
+
+  /* Resume remains a deliberate outlined action button. */
+  .nav-links .resume-link{
+    border-radius:14px !important;
+  }
+}
