@@ -11,6 +11,6 @@ V18 promotes the approved V17.3 design:
 - mobile-specific opaque glass navigation panel
 - responsive layout and existing animations
 - light/dark mode
-- production CNAME and indexing enabled
+- production CNAME and indexing enabled.
 
 Deploy the contents of this ZIP to the production repository's main branch at / (root).
