@@ -18,6 +18,40 @@ const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isInte
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 const sections=[...document.querySelectorAll('main section[id]')], nav=[...document.querySelectorAll('.nav-links a[href^="#"]')];
 nav[0]?.classList.add('active');
+
+// V18.2: one shared active pill glides between desktop/tablet nav items.
+const navLinksContainer=document.querySelector('.nav-links');
+const activeIndicator=document.createElement('span');
+activeIndicator.className='nav-active-indicator';
+activeIndicator.setAttribute('aria-hidden','true');
+navLinksContainer?.prepend(activeIndicator);
+
+function moveActiveIndicator(activeLink, immediate=false){
+  if(!navLinksContainer || !activeLink) return;
+
+  // Mobile keeps its existing full-width active item styling.
+  if(window.innerWidth <= 900){
+    activeIndicator.classList.remove('visible');
+    return;
+  }
+
+  const containerRect=navLinksContainer.getBoundingClientRect();
+  const linkRect=activeLink.getBoundingClientRect();
+
+  if(immediate) activeIndicator.classList.add('no-transition');
+
+  activeIndicator.style.width=`${linkRect.width}px`;
+  activeIndicator.style.height=`${linkRect.height}px`;
+  activeIndicator.style.transform=
+    `translate3d(${linkRect.left-containerRect.left}px,${linkRect.top-containerRect.top}px,0)`;
+  activeIndicator.classList.add('visible');
+
+  if(immediate){
+    requestAnimationFrame(()=>requestAnimationFrame(()=>
+      activeIndicator.classList.remove('no-transition')
+    ));
+  }
+}
 function updateActiveNav(){
   let current='home';
 
@@ -36,11 +70,24 @@ function updateActiveNav(){
     });
   }
 
-  nav.forEach(a=>
-    a.classList.toggle('active',a.getAttribute('href')==='#'+current)
-  );
+  let activeLink=null;
+  nav.forEach(a=>{
+    const isActive=a.getAttribute('href')==='#'+current;
+    a.classList.toggle('active',isActive);
+    if(isActive) activeLink=a;
+  });
+
+  moveActiveIndicator(activeLink);
 }
 
 window.addEventListener('scroll',updateActiveNav,{passive:true});
-window.addEventListener('resize',updateActiveNav,{passive:true});
+window.addEventListener('resize',()=>{
+  updateActiveNav();
+  const activeLink=nav.find(a=>a.classList.contains('active'));
+  moveActiveIndicator(activeLink,true);
+},{passive:true});
 updateActiveNav();
+requestAnimationFrame(()=>{
+  const activeLink=nav.find(a=>a.classList.contains('active'));
+  moveActiveIndicator(activeLink,true);
+});

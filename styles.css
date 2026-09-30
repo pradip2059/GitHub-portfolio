@@ -1257,3 +1257,80 @@ html[data-theme="light"] #projects.section.alt {
     gap: 5px !important;
   }
 }
+
+
+/* =========================================================
+   V18.2 — SMOOTH SLIDING ACTIVE NAV INDICATOR
+   Desktop/tablet only. Mobile <=900px remains unchanged.
+   ========================================================= */
+@media (min-width: 901px) {
+  .nav-links {
+    position: relative !important;
+    isolation: isolate;
+  }
+
+  .nav-active-indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    border-radius: 14px;
+    background:
+      linear-gradient(145deg,
+        rgba(82, 158, 255, .92),
+        rgba(52, 116, 222, .82));
+    border: 1px solid rgba(151, 202, 255, .60);
+    box-shadow:
+      0 8px 22px rgba(25, 105, 225, .28),
+      inset 0 1px 0 rgba(255,255,255,.28);
+    backdrop-filter: blur(18px) saturate(175%);
+    -webkit-backdrop-filter: blur(18px) saturate(175%);
+    transition:
+      transform 380ms cubic-bezier(.22,1,.36,1),
+      width 380ms cubic-bezier(.22,1,.36,1),
+      height 380ms cubic-bezier(.22,1,.36,1),
+      opacity 160ms ease;
+    will-change: transform, width, height;
+  }
+
+  .nav-active-indicator.visible {
+    opacity: 1;
+  }
+
+  .nav-active-indicator.no-transition {
+    transition: none !important;
+  }
+
+  .nav-links a[href^="#"] {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* The shared moving pill now supplies the active blue background. */
+  .nav-links a[href^="#"].active,
+  .nav-links a[href^="#"].active:hover,
+  .nav-links a[href^="#"].active:focus-visible {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  html[data-theme="light"] .nav-active-indicator {
+    background:
+      linear-gradient(145deg,
+        rgba(73, 145, 244, .78),
+        rgba(57, 116, 218, .68));
+    border-color: rgba(90, 156, 242, .48);
+    box-shadow:
+      0 8px 22px rgba(45, 112, 213, .20),
+      inset 0 1px 0 rgba(255,255,255,.52);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-active-indicator {
+      transition: opacity 120ms ease;
+    }
+  }
+}
