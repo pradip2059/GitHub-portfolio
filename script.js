@@ -18,6 +18,48 @@ const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isInte
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 const sections=[...document.querySelectorAll('main section[id]')], nav=[...document.querySelectorAll('.nav-links a[href^="#"]')];
 nav[0]?.classList.add('active');
+
+// V18.3 TEST: a single liquid-glass pill glides between active nav links.
+// It lives inside .topnav (not .nav-links), so it cannot alter flex layout.
+const topnav=document.querySelector('.topnav');
+const liquidIndicator=document.createElement('span');
+liquidIndicator.className='liquid-nav-indicator';
+liquidIndicator.setAttribute('aria-hidden','true');
+topnav?.appendChild(liquidIndicator);
+
+let indicatorReady=false;
+function positionLiquidIndicator(link, instant=false){
+  if(!topnav || !link || window.innerWidth<=900){
+    liquidIndicator.classList.remove('is-visible');
+    topnav?.classList.remove('nav-indicator-ready');
+    indicatorReady=false;
+    return;
+  }
+
+  const navRect=topnav.getBoundingClientRect();
+  const linkRect=link.getBoundingClientRect();
+
+  if(instant) liquidIndicator.classList.add('no-motion');
+
+  liquidIndicator.style.setProperty('--indicator-x', `${linkRect.left-navRect.left}px`);
+  liquidIndicator.style.setProperty('--indicator-y', `${linkRect.top-navRect.top}px`);
+  liquidIndicator.style.width=`${linkRect.width}px`;
+  liquidIndicator.style.height=`${linkRect.height}px`;
+  liquidIndicator.classList.add('is-visible');
+
+  // Only suppress V18.1's static active background AFTER the moving pill
+  // has a valid size/position. If this ever fails, V18.1 remains visible.
+  if(linkRect.width>0 && linkRect.height>0){
+    topnav.classList.add('nav-indicator-ready');
+    indicatorReady=true;
+  }
+
+  if(instant){
+    requestAnimationFrame(()=>requestAnimationFrame(()=>
+      liquidIndicator.classList.remove('no-motion')
+    ));
+  }
+}
 function updateActiveNav(){
   let current='home';
 
@@ -36,11 +78,23 @@ function updateActiveNav(){
     });
   }
 
-  nav.forEach(a=>
-    a.classList.toggle('active',a.getAttribute('href')==='#'+current)
-  );
+  let activeLink=null;
+  nav.forEach(a=>{
+    const active=a.getAttribute('href')==='#'+current;
+    a.classList.toggle('active',active);
+    if(active) activeLink=a;
+  });
+  positionLiquidIndicator(activeLink);
 }
 
 window.addEventListener('scroll',updateActiveNav,{passive:true});
-window.addEventListener('resize',updateActiveNav,{passive:true});
+window.addEventListener('resize',()=>{
+  updateActiveNav();
+  const activeLink=nav.find(a=>a.classList.contains('active'));
+  positionLiquidIndicator(activeLink,true);
+},{passive:true});
 updateActiveNav();
+requestAnimationFrame(()=>{
+  const activeLink=nav.find(a=>a.classList.contains('active'));
+  positionLiquidIndicator(activeLink,true);
+});

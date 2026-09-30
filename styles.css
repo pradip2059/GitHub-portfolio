@@ -1257,3 +1257,91 @@ html[data-theme="light"] #projects.section.alt {
     gap: 5px !important;
   }
 }
+
+
+/* =========================================================
+   V18.3 TEST — TRUE LIQUID NAV MOTION
+   Desktop/tablet only; mobile <=900px remains V18.1.
+   Safe fallback: V18.1 active pill remains unless JS indicator is ready.
+   ========================================================= */
+@media (min-width: 901px) {
+  .topnav {
+    position: fixed !important;
+  }
+
+  .topnav .nav-inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  .liquid-nav-indicator {
+    --indicator-x: 0px;
+    --indicator-y: 0px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate3d(var(--indicator-x), var(--indicator-y), 0);
+    border-radius: 14px;
+    background:
+      linear-gradient(135deg,
+        rgba(80,160,255,.94),
+        rgba(39,115,221,.88));
+    border: 1px solid rgba(180,219,255,.48);
+    box-shadow:
+      0 8px 22px rgba(39,116,226,.28),
+      inset 0 1px 0 rgba(255,255,255,.28);
+    backdrop-filter: blur(18px) saturate(175%);
+    -webkit-backdrop-filter: blur(18px) saturate(175%);
+    transition:
+      transform 520ms cubic-bezier(.16,1,.3,1),
+      width 520ms cubic-bezier(.16,1,.3,1),
+      height 520ms cubic-bezier(.16,1,.3,1),
+      opacity 140ms ease;
+    will-change: transform,width,height;
+  }
+
+  .liquid-nav-indicator.is-visible {
+    opacity: 1;
+  }
+
+  .liquid-nav-indicator.no-motion {
+    transition: none !important;
+  }
+
+  /* Text/control layer stays above the moving glass pill. */
+  .nav-links a,
+  .nav-links button {
+    position: relative;
+    z-index: 3;
+  }
+
+  /* Only after JS confirms the moving pill exists and is positioned
+     do we remove the old per-link active fill. */
+  .topnav.nav-indicator-ready .nav-links a[href^="#"].active,
+  .topnav.nav-indicator-ready .nav-links a[href^="#"].active:hover,
+  .topnav.nav-indicator-ready .nav-links a[href^="#"].active:focus-visible {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  html[data-theme="light"] .liquid-nav-indicator {
+    background:
+      linear-gradient(135deg,
+        rgba(91,157,245,.78),
+        rgba(58,119,220,.70));
+    border-color: rgba(118,177,247,.56);
+    box-shadow:
+      0 8px 22px rgba(46,112,210,.20),
+      inset 0 1px 0 rgba(255,255,255,.54);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .liquid-nav-indicator {
+      transition: opacity 120ms ease;
+    }
+  }
+}

@@ -20,3 +20,12 @@ Deploy the contents of this ZIP to the production repository's main branch at / 
 - Desktop above 1100px remains unchanged.
 - Existing phone/mobile navigation at 900px and below remains unchanged.
 - Contact now receives the active blue navigation state at the bottom of the page.
+
+## V18.3 — Production
+- Smooth shared liquid-glass active indicator on desktop/tablet.
+- 520ms fluid easing in both scroll directions.
+- V18.1 active state remains as a fail-safe until the animated pill is confirmed positioned.
+- Does not alter nav flex layout.
+- Mobile <=900px unchanged.
+
+Production domain: https://pradipsapkota.dev/
