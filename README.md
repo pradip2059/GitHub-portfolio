@@ -1,10 +1,3 @@
-# Pradip Portfolio V18.4 — Production
+# Pradip Sapkota Portfolio — V18.5 TEST
 
-Production build for pradipsapkota.dev.
-
-- Clean text-only desktop/tablet navigation at rest.
-- Rounded blue glass capsule appears on hover/focus.
-- Approved V18.3 smooth liquid active-section indicator preserved.
-- Resume retains outlined-button treatment.
-- Tablet and mobile behavior preserved.
-- Production CNAME, canonical URL, robots.txt, and sitemap restored.
+First four project cards expand smoothly and reveal GitHub repository links. V18.4 UI/navigation/theme is otherwise preserved. Test only: no CNAME, no production canonical, no sitemap, indexing disabled.

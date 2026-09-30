@@ -98,3 +98,6 @@ requestAnimationFrame(()=>{
   const activeLink=nav.find(a=>a.classList.contains('active'));
   positionLiquidIndicator(activeLink,true);
 });
+
+// V18.5 TEST — accessible expandable project cards
+document.querySelectorAll('.expandable-project').forEach(card=>{const panel=card.querySelector('.project-repo-panel'),hintText=card.querySelector('.project-expand-hint span'),githubLink=card.querySelector('.project-github-btn');const setExpanded=expanded=>{card.classList.toggle('is-expanded',expanded);card.setAttribute('aria-expanded',String(expanded));panel?.setAttribute('aria-hidden',String(!expanded));if(hintText)hintText.textContent=expanded?'Hide project link':'View project'};const toggleCard=()=>setExpanded(card.getAttribute('aria-expanded')!=='true');card.addEventListener('click',event=>{if(event.target.closest('a,button'))return;toggleCard()});card.addEventListener('keydown',event=>{if(event.target.closest('a,button'))return;if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleCard()}});githubLink?.addEventListener('click',event=>event.stopPropagation())});
