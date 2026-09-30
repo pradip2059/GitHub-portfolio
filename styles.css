@@ -1483,3 +1483,19 @@ html[data-theme="light"] #projects.section.alt {
   #projects .project-independent-columns>.project-column{display:contents!important}
   #projects .project-independent-columns .project-card{margin-bottom:18px}
 }
+
+
+/* =========================================================
+   V18.6.2 TEST — mobile project tap highlight fix
+   Desktop behavior unchanged; project expansion unchanged.
+   ========================================================= */
+@media (hover: none) and (pointer: coarse) {
+  #projects .expandable-project {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #projects .expandable-project:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+  }
+}
