@@ -1,17 +1,16 @@
-# Pradip Sapkota — Engineering Portfolio V16
+# Pradip Sapkota — Engineering Portfolio V18
 
-Production build for **https://pradipsapkota.dev**
+Production build for https://pradipsapkota.dev/
 
-V16 finalizes the blue glass/translucent engineering design:
-- glass content cards and navigation
-- subtle blue ambient background depth
-- polished hero role badge
-- responsive mobile layout
-- active-section navigation
-- first-scroll reveal animations
-- card hover interactions
+V18 promotes the approved V17.3 design:
+- blue liquid-glass visual system
+- floating rounded glass desktop navigation
+- rounded navigation hover/active states
+- translucent alternating section backgrounds
+- liquid-glass cards and controls
+- mobile-specific opaque glass navigation panel
+- responsive layout and existing animations
 - light/dark mode
-- coursework, experience, projects, certificates, and contact
-- production CNAME, robots.txt, sitemap.xml, and canonical metadata
+- production CNAME and indexing enabled
 
-Deploy from the `main` branch at `/ (root)`.
+Deploy the contents of this ZIP to the production repository's main branch at / (root).
