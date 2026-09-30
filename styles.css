@@ -592,3 +592,36 @@ html[data-theme="dark"] .resume-link {
     padding-right: 14px !important;
   }
 }
+
+
+/* =========================================================
+   V16.1 FINAL — restore visible alternating section bands
+   ========================================================= */
+.section.alt {
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent) 7%, var(--surface2)) 0%,
+      color-mix(in srgb, var(--surface2) 78%, var(--bg)) 55%,
+      color-mix(in srgb, var(--accent) 5%, var(--bg)) 100%
+    ) !important;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 15%, var(--line)) !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 15%, var(--line)) !important;
+}
+
+html[data-theme="dark"] .section.alt {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18,39,68,.82) 0%,
+      rgba(14,31,54,.76) 55%,
+      rgba(19,43,74,.78) 100%
+    ) !important;
+  border-top-color: rgba(76,154,255,.16) !important;
+  border-bottom-color: rgba(76,154,255,.16) !important;
+}
+
+/* Keep normal sections transparent so the contrast is unmistakable. */
+.section:not(.alt):not(.contact) {
+  background: transparent;
+}
