@@ -1499,3 +1499,15 @@ html[data-theme="light"] #projects.section.alt {
     box-shadow: var(--shadow);
   }
 }
+
+
+/* V18.6.6 — match the breathing room used between other portfolio cards */
+#certificates .certificate-list,
+#certificates .certificates-grid,
+#certificates .cert-grid {
+  gap: 22px !important;
+}
+
+#certificates article + article {
+  margin-top: 22px;
+}
