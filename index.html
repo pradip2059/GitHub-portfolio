@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css?v=18.6.6-certificate-spacing">
+  <link rel="stylesheet" href="styles.css?v=18.7.3">
   <script>
     (function(){
       const saved=localStorage.getItem('v15-theme');
@@ -47,7 +47,7 @@
   }
   </script>
   <link rel="canonical" href="https://pradipsapkota.dev/">
-  </head>
+</head>
 <body>
 <nav class="topnav">
   <div class="nav-inner">
@@ -108,27 +108,18 @@
 </section>
 
 
-<section id="coursework" class="section alt">
-  <div class="section-head reveal">
-    <p class="kicker">COURSEWORK</p>
-    <h2>Relevant courses taken</h2>
-    <p>Computer engineering, embedded systems, electronics, controls, communications, mathematics, and computing coursework.</p>
-  </div>
-  <div class="course-grid">
-    <div class="course-item reveal"><strong>EE 281</strong><span>Digital Systems Design/Test</span></div>
-    <div class="course-item reveal"><strong>EE 282</strong><span>Digital Systems Design Lab</span></div>
-    <div class="course-item reveal"><strong>EE 234</strong><span>Microprocessor Engineering I</span></div>
-    <div class="course-item reveal"><strong>EE 334</strong><span>Microprocessor Engineering II</span></div>
-    <div class="course-item reveal"><strong>EE 245</strong><span>Robotics Programming</span></div>
-    <div class="course-item reveal"><strong>EE 332</strong><span>Electronics I</span></div>
-    <div class="course-item reveal"><strong>EE 341</strong><span>Signals &amp; Systems</span></div>
-    <div class="course-item reveal"><strong>EE 358</strong><span>Control Systems</span></div>
-    <div class="course-item reveal"><strong>EE 368</strong><span>Control Systems Lab</span></div>
-    <div class="course-item reveal"><strong>EE 390</strong><span>Smart Sensor Systems</span></div>
-    <div class="course-item reveal"><strong>EE 395</strong><span>Computer Hardware &amp; Organization</span></div>
-    <div class="course-item reveal"><strong>EE 353</strong><span>Communication Systems Engineering</span></div>
-    <div class="course-item reveal"><strong>EE 489</strong><span>Real-Time Embedded Systems</span></div>
-    <div class="course-item reveal"><strong>EE 498</strong><span>Topics: Operating Systems for Heterogeneous Systems</span></div>
+<section id="coursework" class="section alt v1872-coursework">
+  <div class="section-head reveal"><p class="kicker">COURSEWORK</p><h2>Engineering foundation</h2><p>Explore relevant coursework by engineering area.</p></div>
+  <div class="course-domains">
+    <div class="course-domain reveal"><button class="course-domain-summary" type="button" aria-expanded="false"><span><b>Embedded &amp; Digital</b><small>5 courses</small></span><i class="fas fa-chevron-down"></i></button><div class="course-domain-panel"><div class="course-domain-inner"><div class="course-grid">
+      <div class="course-item"><strong>EE 281</strong><span>Digital Systems Design/Test</span></div><div class="course-item"><strong>EE 282</strong><span>Digital Systems Design Lab</span></div><div class="course-item"><strong>EE 234</strong><span>Microprocessor Engineering I</span></div><div class="course-item"><strong>EE 334</strong><span>Microprocessor Engineering II</span></div><div class="course-item"><strong>EE 489</strong><span>Real-Time Embedded Systems</span></div>
+    </div></div></div></div>
+    <div class="course-domain reveal"><button class="course-domain-summary" type="button" aria-expanded="false"><span><b>Controls &amp; Signals</b><small>5 courses</small></span><i class="fas fa-chevron-down"></i></button><div class="course-domain-panel"><div class="course-domain-inner"><div class="course-grid">
+      <div class="course-item"><strong>EE 341</strong><span>Signals &amp; Systems</span></div><div class="course-item"><strong>EE 358</strong><span>Control Systems</span></div><div class="course-item"><strong>EE 368</strong><span>Control Systems Lab</span></div><div class="course-item"><strong>EE 390</strong><span>Smart Sensor Systems</span></div><div class="course-item"><strong>EE 353</strong><span>Communication Systems Engineering</span></div>
+    </div></div></div></div>
+    <div class="course-domain reveal"><button class="course-domain-summary" type="button" aria-expanded="false"><span><b>Computer Engineering</b><small>4 courses</small></span><i class="fas fa-chevron-down"></i></button><div class="course-domain-panel"><div class="course-domain-inner"><div class="course-grid">
+      <div class="course-item"><strong>EE 245</strong><span>Robotics Programming</span></div><div class="course-item"><strong>EE 332</strong><span>Electronics I</span></div><div class="course-item"><strong>EE 395</strong><span>Computer Hardware &amp; Organization</span></div><div class="course-item"><strong>EE 498</strong><span>Topics: Operating Systems for Heterogeneous Systems</span></div>
+    </div></div></div></div>
   </div>
 </section>
 
@@ -174,11 +165,14 @@
   </article>
 </section>
 
-<section id="contact" class="section contact">
+<section id="contact" class="section contact alt">
   <div class="contact-box reveal"><p class="kicker">LET'S CONNECT</p><h2>Interested in working together?</h2><p>I am exploring entry-level opportunities in controls and automation, embedded systems, electrical hardware and test, and robotics.</p>
   <div class="hero-actions centered"><a class="btn primary" href="mailto:pradipsapkota.ce@outlook.com"><i class="fas fa-envelope"></i> Email</a><a class="btn" href="https://www.linkedin.com/in/pradip-sapkota-8a93582b0/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><a class="btn" href="https://github.com/pradip2059" target="_blank"><i class="fab fa-github"></i> GitHub</a></div></div>
 </section>
 </main>
 <footer><p>© 2026 Pradip Sapkota • Computer Engineering Portfolio</p></footer>
 <script src="script.js?v=18.5.3-top-arrow"></script>
+<script>
+(()=>{const groups=[...document.querySelectorAll('.course-domain')],reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;function init(g){const p=g.querySelector('.course-domain-panel'),o=g.classList.contains('is-open');p.style.height=o?'auto':'0px';p.style.opacity=o?'1':'0';}function toggle(g){const p=g.querySelector('.course-domain-panel'),btn=g.querySelector('.course-domain-summary'),opening=!g.classList.contains('is-open');if(reduce){g.classList.toggle('is-open',opening);btn.setAttribute('aria-expanded',opening);p.style.height=opening?'auto':'0px';p.style.opacity=opening?'1':'0';return;}const from=p.getBoundingClientRect().height;p.style.height=from+'px';p.offsetHeight;g.classList.toggle('is-open',opening);btn.setAttribute('aria-expanded',opening);const to=opening?p.scrollHeight:0;p.style.height=to+'px';p.style.opacity=opening?'1':'0';const done=e=>{if(e.propertyName!=='height')return;p.removeEventListener('transitionend',done);p.style.height=opening?'auto':'0px';};p.addEventListener('transitionend',done);}groups.forEach(g=>{init(g);g.querySelector('.course-domain-summary').addEventListener('click',()=>toggle(g));});})();
+</script>
 </body></html>
